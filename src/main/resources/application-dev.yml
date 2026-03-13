@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 20000
+    url: jdbc:postgresql://127.0.0.1:5433/indal_db
+    username: indal_user
+    password: indal_pass
+    driver-class-name: org.postgresql.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    org.springframework.jdbc: DEBUG
+    com.zaxxer.hikari: DEBUG
+

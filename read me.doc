@@ -1,0 +1,9 @@
+# Base de datos
+cd infra
+docker compose up -d
+
+# Backend
+cd ../indalappback
+mvn spring-boot:run
+
+GET http://localhost:8081/actuator/health
