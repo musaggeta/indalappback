@@ -12,6 +12,13 @@ pipeline {
             }
         }
 
+        stage('Inspect Workspace') {
+            steps {
+                bat 'dir'
+                bat 'dir /s /b pom.xml'
+            }
+        }
+
         stage('Clean') {
             steps {
                 dir('indalappback') {
