@@ -21,9 +21,9 @@ pipeline {
 
         stage('Clean') {
             steps {
-                dir('indalappback') {
+                
                     bat 'mvn clean'
-                }
+                
             }
         }
 
