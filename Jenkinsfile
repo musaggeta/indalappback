@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Github') {
             steps {
-                git branch: 'main', url: 'https://github.com/musaggeta/IndalApp.git'
+                git branch: 'main', url: 'https://github.com/musaggeta/indalappback.git'
             }
         }
 
@@ -29,25 +29,25 @@ pipeline {
 
         stage('Compile') {
             steps {
-                dir('indalappback') {
+                
                     bat 'mvn compile'
-                }
+                
             }
         }
 
         stage('Test') {
             steps {
-                dir('indalappback') {
+                
                     bat 'mvn test'
-                }
+                
             }
         }
 
         stage('Package') {
             steps {
-                dir('indalappback') {
+                
                     bat 'mvn package'
-                }
+                
             }
         }
     }
