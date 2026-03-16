@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Github') {
             steps {
-                git branch: 'main', url: 'https://github.com/musaggeta/IndalApp.git'
+                git branch: 'main', url: 'https://github.com/musaggeta/indalappback'
             }
         }
 
