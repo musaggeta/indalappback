@@ -6,7 +6,7 @@ spring:
     hikari:
       maximum-pool-size: 5
       connection-timeout: 20000
-    url: jdbc:postgresql://postgres:5432/indal_db
+    url: jdbc:postgresql://127.0.0.1:5433/indal_db
     username: indal_user
     password: indal_pass
     driver-class-name: org.postgresql.Driver
