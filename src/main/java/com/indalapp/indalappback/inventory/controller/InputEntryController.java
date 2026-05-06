@@ -28,4 +28,18 @@ public class InputEntryController {
     public ResponseEntity<InputEntryResponse> create(@Valid @RequestBody InputEntryRequest request) {
         return ResponseEntity.ok(inputEntryService.create(request));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<InputEntryResponse> update(
+            @PathVariable Long id,
+            @Valid @RequestBody InputEntryRequest request
+    ) {
+        return ResponseEntity.ok(inputEntryService.update(id, request));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        inputEntryService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
