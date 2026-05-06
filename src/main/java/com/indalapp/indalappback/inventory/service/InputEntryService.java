@@ -135,7 +135,12 @@ public class InputEntryService {
         if (newStock < -EPSILON) {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST,
-                    "No hay suficiente stock de " + rawMaterial.getName() + " para ajustar la entrada"
+                    String.format(
+                            "No hay suficiente stock de %s para ajustar la entrada. Stock actual: %.2f, ajuste solicitado: %.2f",
+                            rawMaterial.getName(),
+                            rawMaterial.getStock(),
+                            quantityDelta
+                    )
             );
         }
 

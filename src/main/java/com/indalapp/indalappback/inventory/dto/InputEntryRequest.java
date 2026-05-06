@@ -1,8 +1,8 @@
 package com.indalapp.indalappback.inventory.dto;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 public class InputEntryRequest {
 
@@ -13,11 +13,11 @@ public class InputEntryRequest {
     private String supplier;
 
     @NotNull(message = "La cantidad es obligatoria")
-    @Min(value = 1, message = "La cantidad debe ser mayor a 0")
+    @Positive(message = "La cantidad debe ser mayor a 0")
     private Double quantity;
 
     @NotNull(message = "El costo unitario es obligatorio")
-    @Min(value = 1, message = "El costo unitario debe ser mayor a 0")
+    @Positive(message = "El costo unitario debe ser mayor a 0")
     private Double unitCost;
 
     public InputEntryRequest() {
